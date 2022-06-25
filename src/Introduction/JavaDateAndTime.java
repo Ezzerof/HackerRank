@@ -5,7 +5,16 @@ package Introduction;
 
 
 import java.io.*;
-
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 import java.time.LocalDate;
 
     class Result {
@@ -30,27 +39,25 @@ import java.time.LocalDate;
 
     }
 
-    public class JavaDateAndTime {
-        public static void main(String[] args) throws IOException {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+public class JavaDateAndTime {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-            String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-            int month = Integer.parseInt(firstMultipleInput[0]);
+        int month = Integer.parseInt(firstMultipleInput[0]);
 
-            int day = Integer.parseInt(firstMultipleInput[1]);
+        int day = Integer.parseInt(firstMultipleInput[1]);
 
-            int year = Integer.parseInt(firstMultipleInput[2]);
+        int year = Integer.parseInt(firstMultipleInput[2]);
 
-            Result.findDay(month, day, year);
+        String res = Result.findDay(month, day, year);
 
-            bufferedWriter.newLine();
+        bufferedWriter.write(res);
+        bufferedWriter.newLine();
 
-            bufferedReader.close();
-            bufferedWriter.close();
-        }
+        bufferedReader.close();
+        bufferedWriter.close();
     }
-
-
-
+}
